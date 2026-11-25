@@ -6,7 +6,16 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>sopha's space</title>
+    <title>Sopha's Space</title>
+    <meta name="description" content="Sopha's Space is the teaching portfolio of Chum Sopha, sharing ICT learning notes, classroom resources, book reviews, and education technology projects." />
+    <meta name="author" content="Chum Sopha" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#fafaf8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sopha's Space" />
+    <meta property="og:title" content="Sopha's Space | ជុំ សុផា" />
+    <meta property="og:description" content="ICT teaching portfolio, student learning notes, book reviews, and education technology projects." />
+    <meta name="twitter:card" content="summary" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +23,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Sopha's Space",
+            "description": "Teaching portfolio, student learning notes, book reviews, and education technology projects."
+          },
+          {
+            "@type": "Person",
+            "name": "Chum Sopha",
+            "jobTitle": "ICT and language teacher",
+            "description": "Teacher sharing learning resources, teaching experience, book reviews, and education technology projects.",
+            "knowsAbout": ["ICT education", "English language teaching", "Education technology"]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
@@ -123,14 +151,45 @@
         <circle cx="12" cy="12" r="9" />
         <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
       </symbol>
+
+      <symbol id="i-eye" viewBox="0 0 24 24">
+        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+        <circle cx="12" cy="12" r="3" />
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3" />
+      </symbol>
+      <symbol id="i-zoom-in" viewBox="0 0 24 24">
+        <circle cx="10.8" cy="10.8" r="7" />
+        <path d="M16 16 21 21M10.8 7.8v6m-3-3h6" />
+      </symbol>
+      <symbol id="i-zoom-out" viewBox="0 0 24 24">
+        <circle cx="10.8" cy="10.8" r="7" />
+        <path d="M16 16 21 21M7.8 10.8h6" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path d="m18 6-12 12M6 6l12 12" />
+      </symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24">
+        <path d="m14 5 5 5M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Z" />
+      </symbol>
+      <symbol id="i-external" viewBox="0 0 24 24">
+        <path d="M14 4h6v6M20 4 10 14" />
+        <path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2" />
+        <path d="M16 3v4M8 3v4M3 10h18" />
+      </symbol>
     </svg>
 
+    <a class="skip-link" href="#main-content">រំលងទៅមាតិកា</a>
     <header><div class="header-stack">
       <div class="brand-pill">Sopha's Space</div>
-      <nav id="nav"></nav></div>
+      <nav id="nav" aria-label="Main navigation"></nav></div>
     </header>
 
-    <main>
+    <main id="main-content">
       <div class="slider" id="slider" aria-roledescription="carousel">
         <div class="track" id="track">
           <div class="slide">
@@ -240,14 +299,64 @@
           </div>
           <div class="grid" id="homeFeatured"></div>
         </div>
+
+        <div class="home-sec" id="homeLatestSection">
+          <div class="sec-head">
+            <div>
+              <h2>Latest Updates</h2>
+              <p class="muted section-subtitle">កំណត់ត្រា និងមេរៀនដែលបានបង្ហោះថ្មីៗ</p>
+            </div>
+            <a href="#notes" class="btn ghost">មើលកំណត់ត្រាទាំងអស់</a>
+          </div>
+          <div class="grid latest-updates-grid" id="homeLatestNotes">
+            <p class="muted">កំពុងទាញយកកំណត់ត្រាថ្មីៗ...</p>
+          </div>
+        </div>
       </section>
 
       <section id="skills" hidden>
         <h2>ជំនាញ</h2>
         <div class="grid" id="skillsGrid"></div>
       </section>
+
       <section id="projects" hidden>
         <h2>គម្រោង</h2>
+        <p class="admin-signin-hint" id="projectAdminHint">ដើម្បីបន្ថែម ឬកែសម្រួលគម្រោង សូមចូលគណនីគ្រូនៅផ្ទាំងកំណត់ត្រាសិស្សជាមុន។</p>
+        <div class="content-admin" id="projectAdmin" hidden>
+          <div class="content-admin-head">
+            <div>
+              <strong>គ្រប់គ្រងគម្រោង</strong>
+              <p class="muted">បន្ថែមគម្រោងថ្មី ឬកែសម្រួលគម្រោងដែលបានបង្ហោះ។</p>
+            </div>
+            <button type="button" id="addProjectBtn" class="btn"><svg class="i"><use href="#i-plus" /></svg> បន្ថែមគម្រោង</button>
+          </div>
+          <div id="projectStatus" class="note-status" role="status" aria-live="polite"></div>
+          <form id="projectForm" class="content-editor" hidden>
+            <h3 id="projectFormHeading">គម្រោងថ្មី</h3>
+            <label for="projectTitle">ចំណងជើងគម្រោង</label>
+            <input id="projectTitle" maxlength="160" placeholder="ឈ្មោះគម្រោង" required />
+            <label for="projectDescription">ការពិពណ៌នា</label>
+            <textarea id="projectDescription" rows="4" placeholder="ពិពណ៌នាអំពីគម្រោង..." required></textarea>
+            <label for="projectTech">បច្ចេកវិទ្យា (បំបែកដោយសញ្ញាក្បៀស)</label>
+            <input id="projectTech" placeholder="HTML, CSS, JavaScript" />
+            <label for="projectRole">តួនាទីរបស់ខ្ញុំ</label>
+            <input id="projectRole" placeholder="រចនា និងអភិវឌ្ឍប្រព័ន្ធ" />
+            <label for="projectUrl">តំណភ្ជាប់គម្រោង (មិនចាំបាច់)</label>
+            <input id="projectUrl" type="url" inputmode="url" placeholder="https://..." />
+            <div class="content-image-tools">
+              <input type="file" id="projectImageInput" accept="image/*" hidden />
+              <button type="button" id="projectImagePick" class="btn ghost"><svg class="i"><use href="#i-img" /></svg> បន្ថែមរូបភាព</button>
+              <div class="content-image-preview" id="projectImagePreview" hidden>
+                <img id="projectImagePreviewImg" alt="រូបភាពគម្រោងមើលជាមុន" />
+                <button type="button" id="projectImageClear" class="icon-button" aria-label="ដករូបភាពចេញ"><svg class="i"><use href="#i-x" /></svg></button>
+              </div>
+            </div>
+            <div class="content-form-actions">
+              <button type="submit" class="btn" id="projectSaveBtn">រក្សាទុកគម្រោង</button>
+              <button type="button" class="btn ghost" id="projectCancelBtn">បោះបង់</button>
+            </div>
+          </form>
+        </div>
         <div class="grid" id="projGrid"></div>
       </section>
       <section id="education" hidden>
@@ -270,43 +379,55 @@
             <svg class="i"><use href="#i-pin" /></svg>
             <div>អាសយដ្ឋាន<small>ត្រាំកក់ តាកែវ</small></div>
           </div>
-          <a
-            class="link"
-            href="https://linkedin.com/in/your-name"
-            target="_blank"
-            rel="noopener"
-            ><svg class="i"><use href="#i-in" /></svg>
-            <div>LinkedIn<small>linkedin.com/in/your-name</small></div></a
-          >
-          <a
-            class="link"
-            href="https://github.com/your-name"
-            target="_blank"
-            rel="noopener"
-            ><svg class="i"><use href="#i-github" /></svg>
-            <div>GitHub<small>github.com/your-name</small></div></a
-          >
-          <a
-            class="link"
-            href="https://t.me/your_name"
-            target="_blank"
-            rel="noopener"
-            ><svg class="i"><use href="#i-send" /></svg>
-            <div>Telegram<small>@your_name</small></div></a
-          >
-          <a
-            class="link"
-            href="https://facebook.com/your.name"
-            target="_blank"
-            rel="noopener"
-            ><svg class="i"><use href="#i-fb" /></svg>
-            <div>Facebook<small>facebook.com/your.name</small></div></a
-          >
+          <p class="contact-note">សម្រាប់សំណួរអំពីមេរៀន សម្ភារៈសិក្សា ឬគេហទំព័រ សូមទាក់ទងតាមអ៊ីមែល។</p>
         </div>
       </section>
 
+
       <section id="books" hidden>
         <h2>ជ្រុងសៀវភៅ</h2>
+        <p class="admin-signin-hint" id="bookAdminHint">ដើម្បីបន្ថែម ឬកែសម្រួលការពិនិត្យសៀវភៅ សូមចូលគណនីគ្រូនៅផ្ទាំងកំណត់ត្រាសិស្សជាមុន។</p>
+        <div class="content-admin" id="bookAdmin" hidden>
+          <div class="content-admin-head">
+            <div>
+              <strong>គ្រប់គ្រងការពិនិត្យសៀវភៅ</strong>
+              <p class="muted">បង្ហោះសៀវភៅថ្មី កែសម្រួលការពិនិត្យ និងបន្ថែមរូបភាពគម្រប។</p>
+            </div>
+            <button type="button" id="addBookBtn" class="btn"><svg class="i"><use href="#i-plus" /></svg> បន្ថែមសៀវភៅ</button>
+          </div>
+          <div id="bookStatus" class="note-status" role="status" aria-live="polite"></div>
+          <form id="bookForm" class="content-editor" hidden>
+            <h3 id="bookFormHeading">ការពិនិត្យសៀវភៅថ្មី</h3>
+            <label for="bookTitle">ចំណងជើងសៀវភៅ</label>
+            <input id="bookTitle" maxlength="160" placeholder="ចំណងជើងសៀវភៅ" required />
+            <label for="bookAuthor">អ្នកនិពន្ធ</label>
+            <input id="bookAuthor" maxlength="120" placeholder="ឈ្មោះអ្នកនិពន្ធ" />
+            <label for="bookRating">ពិន្ទុ (១–៥)</label>
+            <select id="bookRating">
+              <option value="5">៥ – ល្អឥតខ្ចោះ</option>
+              <option value="4">៤ – ល្អណាស់</option>
+              <option value="3">៣ – មធ្យម</option>
+              <option value="2">២ – មិនសូវល្អ</option>
+              <option value="1">១ – មិនណែនាំ</option>
+            </select>
+            <label for="bookQuote">សម្រង់ ឬគំនិតដែលចូលចិត្ត</label>
+            <textarea id="bookQuote" rows="3" placeholder="សរសេរសម្រង់ ឬគំនិតពីសៀវភៅ..."></textarea>
+            <label for="bookRecommendation">ការណែនាំ</label>
+            <input id="bookRecommendation" placeholder="ណែនាំសម្រាប់អ្នកចាប់ផ្តើម" />
+            <div class="content-image-tools">
+              <input type="file" id="bookImageInput" accept="image/*" hidden />
+              <button type="button" id="bookImagePick" class="btn ghost"><svg class="i"><use href="#i-img" /></svg> បន្ថែមគម្របសៀវភៅ</button>
+              <div class="content-image-preview book-image-preview" id="bookImagePreview" hidden>
+                <img id="bookImagePreviewImg" alt="គម្របសៀវភៅមើលជាមុន" />
+                <button type="button" id="bookImageClear" class="icon-button" aria-label="ដករូបភាពចេញ"><svg class="i"><use href="#i-x" /></svg></button>
+              </div>
+            </div>
+            <div class="content-form-actions">
+              <button type="submit" class="btn" id="bookSaveBtn">រក្សាទុកការពិនិត្យ</button>
+              <button type="button" class="btn ghost" id="bookCancelBtn">បោះបង់</button>
+            </div>
+          </form>
+        </div>
         <div class="grid" id="bookGrid"></div>
       </section>
 
@@ -334,6 +455,10 @@
 
         <div id="noteEditor" hidden>
           <h3 class="note-editor-heading">បង្ហោះកំណត់ត្រាថ្មី</h3>
+          <div class="note-publishing-guidance">
+            <strong>គន្លឹះមុនពេលបង្ហោះ</strong>
+            <p>សូមសរសេរការពន្យល់ផ្ទាល់ខ្លួនឱ្យច្បាស់ បន្ថែមឧទាហរណ៍ ឬជំហានអនុវត្ត ហើយបញ្ជាក់ប្រភពនៅពេលប្រើសម្ភារៈរបស់អ្នកដទៃ។ បង្ហោះតែរូបភាព និងឯកសារដែលអ្នកមានសិទ្ធិប្រើប្រាស់។</p>
+          </div>
           <form id="noteForm">
             <input type="file" id="nImg" accept="image/*" hidden />
             <div class="note-fields">
@@ -356,12 +481,14 @@
                   <option value="ភាសាចិន"></option>
                 </datalist>
               </div>
-              <textarea id="nBody" placeholder="សរសេរកំណត់ត្រាសម្រាប់សិស្ស..." required></textarea>
+              <textarea id="nBody" placeholder="សរសេរកំណត់ត្រាសម្រាប់សិស្ស... (បន្ថែមការពន្យល់ និងឧទាហរណ៍)" required></textarea>
               <div id="nPreview" class="note-prev" hidden>
                 <img id="nPrevImg" alt="រូបភាពមើលជាមុន" />
                 <button type="button" id="nClearImg" aria-label="ដករូបភាពចេញ">×</button>
               </div>
             </div>
+            <label class="note-source-label" for="nSource">ប្រភព / ការទទួលស្គាល់ (មិនចាំបាច់)</label>
+            <input id="nSource" maxlength="500" placeholder="ឧ. សៀវភៅសិក្សា មេរៀនទី ២ ឬ URL ប្រភព..." />
             <div class="note-form-actions">
               <button id="noteSubmitBtn" type="submit" class="btn">រក្សាទុកកំណត់ត្រា</button>
               <button id="cancelNoteEditBtn" type="button" class="btn ghost" hidden>បោះបង់ការកែសម្រួល</button>
@@ -369,12 +496,48 @@
           </form>
         </div>
 
+        <div class="recently-added-head">
+          <div>
+            <h3 class="recently-added-heading">Recently Added</h3>
+            <p class="muted">មេរៀនថ្មីៗត្រូវបានរៀបតាមលំដាប់ពីថ្មីទៅចាស់។</p>
+          </div>
+        </div>
         <div id="noteFilters" class="edu-tabs"></div>
         <div id="noteList" aria-live="polite"></div>
       </section>
     </main>
-    <footer>© <span id="yr"></span> ជុំ សុផា</footer>
 
+    <dialog id="imageLightbox" class="image-lightbox" aria-label="មើលរូបភាពកំណត់ត្រា">
+      <div class="lightbox-shell">
+        <div class="lightbox-toolbar">
+          <p id="lightboxTitle" class="lightbox-title">រូបភាពកំណត់ត្រា</p>
+          <div class="lightbox-controls">
+            <button type="button" id="lightboxZoomOut" class="icon-button" aria-label="បង្រួមរូបភាព" title="បង្រួម"><svg class="i"><use href="#i-zoom-out" /></svg></button>
+            <button type="button" id="lightboxZoomReset" class="lightbox-zoom-label" aria-label="កំណត់ទំហំដើម">100%</button>
+            <button type="button" id="lightboxZoomIn" class="icon-button" aria-label="ពង្រីករូបភាព" title="ពង្រីក"><svg class="i"><use href="#i-zoom-in" /></svg></button>
+            <button type="button" id="lightboxDownload" class="icon-button" aria-label="ទាញយករូបភាព" title="ទាញយក"><svg class="i"><use href="#i-download" /></svg></button>
+            <button type="button" id="lightboxClose" class="icon-button lightbox-close" aria-label="បិទ"><svg class="i"><use href="#i-x" /></svg></button>
+          </div>
+        </div>
+        <div class="lightbox-stage" id="lightboxStage">
+          <img id="lightboxImage" alt="រូបភាពកំណត់ត្រាពង្រីក" />
+        </div>
+        <p class="lightbox-hint">ប្រើប៊ូតុង + និង − ដើម្បីពង្រីក ឬបង្រួមរូបភាព។</p>
+      </div>
+    </dialog>
+
+    <footer class="site-footer" role="contentinfo">
+      <p>© <span id="yr"></span> ជុំ សុផា · Sopha's Space</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="about.html">អំពីគេហទំព័រ</a>
+        <a href="contact.html">ទំនាក់ទំនង</a>
+        <a href="editorial-policy.html">គោលការណ៍មាតិកា</a>
+        <a href="privacy.html">គោលការណ៍ឯកជនភាព</a>
+        <a href="terms.html">លក្ខខណ្ឌប្រើប្រាស់</a>
+      </nav>
+    </footer>
+
+    <script src="site-config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
   </body>

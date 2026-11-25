@@ -209,75 +209,34 @@ document.getElementById("skillsGrid").innerHTML = skills
   })
   .join("");
 
-var projects = [
-  [
-    "ប្រព័ន្ធគ្រប់គ្រងសាលារៀន",
-    "ប្រព័ន្ធជាភាសាខ្មែរសម្រាប់គ្រប់គ្រងសិស្ស ថ្នាក់ វត្តមាន ពិន្ទុ និងតួនាទីអ្នកប្រើ។",
-    ["HTML", "CSS", "JavaScript"],
-    "រចនា និងអភិវឌ្ឍប្រព័ន្ធទាំងមូល។",
-  ],
-  [
-    "កម្មវិធីគ្រប់គ្រងសិស្សសម្រាប់គ្រូ",
-    "កត់វត្តមាន ពិន្ទុ កំណត់ត្រា និងបង្កើតលិខិតអញ្ជើញមាតាបិតាជាភាសាខ្មែរ។",
-    ["JavaScript", "Supabase"],
-    "រចនា និងអភិវឌ្ឍកម្មវិធីទាំងមូល។",
-  ],
-  [
-    "គេហទំព័រអនុវត្តន៍ប្រឡងភាសាអង់គ្លេស",
-    "គេហទំព័រអនុវត្តន៍ប្រឡងភាសាអង់គ្លេសតាមទម្រង់ប្រឡងបាក់ឌុប។",
-    ["HTML", "CSS", "JavaScript"],
-    "រចនា សរសេរសំណួរ និងបង្កើតគេហទំព័រ។",
-  ],
+var defaultProjects = [
+  {
+    title: "ប្រព័ន្ធគ្រប់គ្រងសាលារៀន",
+    description: "ប្រព័ន្ធជាភាសាខ្មែរសម្រាប់គ្រប់គ្រងសិស្ស ថ្នាក់ វត្តមាន ពិន្ទុ និងតួនាទីអ្នកប្រើ។",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    role: "រចនា និងអភិវឌ្ឍប្រព័ន្ធទាំងមូល។",
+    project_url: "",
+    image_url: "",
+  },
+  {
+    title: "កម្មវិធីគ្រប់គ្រងសិស្សសម្រាប់គ្រូ",
+    description: "កត់វត្តមាន ពិន្ទុ កំណត់ត្រា និងបង្កើតលិខិតអញ្ជើញមាតាបិតាជាភាសាខ្មែរ។",
+    technologies: ["JavaScript", "Supabase"],
+    role: "រចនា និងអភិវឌ្ឍកម្មវិធីទាំងមូល។",
+    project_url: "",
+    image_url: "",
+  },
+  {
+    title: "គេហទំព័រអនុវត្តន៍ប្រឡងភាសាអង់គ្លេស",
+    description: "គេហទំព័រអនុវត្តន៍ប្រឡងភាសាអង់គ្លេសតាមទម្រង់ប្រឡងបាក់ឌុប។",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    role: "រចនា សរសេរសំណួរ និងបង្កើតគេហទំព័រ។",
+    project_url: "",
+    image_url: "",
+  },
 ];
-document.getElementById("projGrid").innerHTML = projects
-  .map(function (p) {
-    return (
-      '<div class="card proj"><div class="shot">' +
-      ic("img") +
-      "</div><h3>" +
-      p[0] +
-      "</h3><p>" +
-      p[1] +
-      '</p><div class="tags">' +
-      p[2]
-        .map(function (t) {
-          return '<span class="tag">' + t + "</span>";
-        })
-        .join("") +
-      '</div><dl style="margin:0"><dt>តួនាទីរបស់ខ្ញុំ</dt><dd>' +
-      p[3] +
-      "</dd></dl></div>"
-    );
-  })
-  .join("");
-var homeFeat = document.getElementById("homeFeatured");
-if (homeFeat) {
-  homeFeat.innerHTML = projects
-    .slice(0, 2)
-    .map(function (p) {
-      return (
-        '<div class="card proj">' +
-        '<div class="shot">' +
-        ic("img") +
-        "</div>" +
-        "<h3>" +
-        p[0] +
-        "</h3>" +
-        "<p>" +
-        p[1] +
-        "</p>" +
-        '<div class="tags">' +
-        p[2]
-          .map(function (t) {
-            return '<span class="tag">' + t + "</span>";
-          })
-          .join("") +
-        "</div>" +
-        "</div>"
-      );
-    })
-    .join("");
-}
+renderProjects(defaultProjects);
+
 var edu = [
   [
     "brief",
@@ -494,79 +453,28 @@ function drawEdu(filter) {
 
 drawEdu("all");
 
-var books = [
-  [
-    "ចំណងជើងសៀវភៅទី ១",
-    "អ្នកនិពន្ធ",
-    5,
-    "សម្រង់ដែលអ្នកចូលចិត្តពីសៀវភៅនេះ។",
-    "ណែនាំសម្រាប់អ្នកចាប់ផ្តើម",
-    "", // ដាក់ទីតាំងរូបភាពនៅទីនេះ ឧ. 'images/book1.jpg'
-  ],
-  [
-    "ចំណងជើងសៀវភៅទី ២",
-    "អ្នកនិពន្ធ",
-    4,
-    "សម្រង់ដែលអ្នកចូលចិត្តពីសៀវភៅនេះ។",
-    "ណែនាំសម្រាប់គ្រូបង្រៀន",
-    "", // ដាក់ទីតាំងរូបភាពនៅទីនេះ ឧ. 'images/book2.jpg'
-  ],
-];
-
-document.getElementById("bookGrid").innerHTML = books
-  .map(function (b) {
-    var stars = "";
-    for (var i = 1; i <= 5; i++) {
-      stars += ic("star", i > b.at(2) ? "off" : "");
-    }
-
-    var coverUrl = b.at(5);
-    var coverHtml = coverUrl
-      ? '<img src="' +
-        coverUrl +
-        '" alt="' +
-        b.at(0) +
-        '" loading="lazy" onerror="this.parentElement.innerHTML=ic(\'book\')">'
-      : ic("book");
-
-    return (
-      '<div class="card book glass-card">' +
-      '<div class="book-cover">' +
-      coverHtml +
-      "</div>" +
-      '<div class="book-info">' +
-      "<h3>" +
-      b.at(0) +
-      "</h3>" +
-      '<div class="by">' +
-      b.at(1) +
-      "</div>" +
-      '<div class="stars" aria-label="ពិន្ទុ ' +
-      b.at(2) +
-      '/5">' +
-      stars +
-      "</div>" +
-      "<blockquote>« " +
-      b.at(3) +
-      " »</blockquote>" +
-      '<div class="rec-pill">' +
-      ic("book") +
-      "<span>" +
-      b.at(4) +
-      "</span></div>" +
-      "</div>" +
-      "</div>"
-    );
-  })
-  .join("");
+var defaultBooks = [];
+renderBooks(defaultBooks);
 
 /* =========================================================
    Student Notes – Supabase-backed posts, admin editing & views
    Configure SUPABASE_URL and SUPABASE_ANON_KEY below.
    Never put a Supabase service-role key in browser code.
    ========================================================= */
-var SUPABASE_URL = "https://jamycbsrhvhtmfjqxcbk.supabase.co";
-var SUPABASE_ANON_KEY = "sb_publishable_ENvDnaGyfrP7-hd_MHHzmQ_mC3zK7Vt";
+var SUPABASE_CONFIG = window.SOPHA_SUPABASE_CONFIG || {};
+var SUPABASE_URL = SUPABASE_CONFIG.url || "https://jamycbsrhvhtmfjqxcbk.supabase.co";
+var SUPABASE_ANON_KEY = SUPABASE_CONFIG.anonKey || "sb_publishable_ENvDnaGyfrP7-hd_MHHzmQ_mC3zK7Vt";
+
+// Give the homepage a stable canonical URL without the current tab hash.
+(function setHomeCanonical() {
+  var canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+  canonical.href = window.location.origin + window.location.pathname;
+})();
 var SUPABASE_BUCKET = "student-note-images";
 
 var supabaseClient = null;
@@ -607,10 +515,17 @@ function hasSupabaseConfig() {
 function getVisitorId() {
   var key = "sopha-note-visitor-id";
   var id = localStorage.getItem(key);
-  if (!id) {
-    id = window.crypto && typeof window.crypto.randomUUID === "function"
-      ? window.crypto.randomUUID()
-      : "v-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2);
+  var validUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  if (!id || !validUuid.test(id)) {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      id = window.crypto.randomUUID();
+    } else {
+      id = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (char) {
+        var random = Math.floor(Math.random() * 16);
+        var value = char === "x" ? random : (random & 3) | 8;
+        return value.toString(16);
+      });
+    }
     localStorage.setItem(key, id);
   }
   return id;
@@ -704,6 +619,9 @@ function updateAdminInterface() {
     importLegacyBtn.hidden = !isNoteAdmin || !legacy.length ||
       localStorage.getItem("sopha-notes-imported-v1") === "yes";
   }
+  if (typeof updatePortfolioAdminInterface === "function") updatePortfolioAdminInterface();
+  if (typeof renderBooks === "function" && typeof portfolioBooks !== "undefined") renderBooks(portfolioBooks);
+  if (typeof renderProjects === "function" && typeof portfolioProjects !== "undefined") renderProjects(portfolioProjects);
 }
 
 async function verifyNoteAdmin(user) {
@@ -736,16 +654,30 @@ async function loadNoteViewCounts() {
   return counts;
 }
 
+async function loadNoteDownloadCounts() {
+  var result = await supabaseClient.rpc("get_student_note_download_counts");
+  if (result.error) {
+    console.warn("Could not load note download counts:", result.error.message);
+    return Object.create(null);
+  }
+  var counts = Object.create(null);
+  (result.data || []).forEach(function (row) {
+    counts[row.note_id] = Number(row.download_count || 0);
+  });
+  return counts;
+}
+
 async function loadNotes() {
   var list = document.getElementById("noteList");
   if (list) list.innerHTML = '<p class="muted">កំពុងទាញយកកំណត់ត្រា...</p>';
   var result = await supabaseClient
     .from("student_notes")
-    .select("id, title, class_tag, body, image_path, created_at, updated_at")
+    .select("id, title, class_tag, body, source_credit, image_path, created_at, updated_at")
     .order("created_at", { ascending: false });
   if (result.error) throw result.error;
 
   var counts = await loadNoteViewCounts();
+  var downloads = await loadNoteDownloadCounts();
   notes = (result.data || []).map(function (row) {
     var imageUrl = "";
     if (row.image_path) {
@@ -757,14 +689,19 @@ async function loadNotes() {
       title: row.title,
       tag: row.class_tag,
       body: row.body,
+      source_credit: row.source_credit || "",
       image_path: row.image_path,
       image_url: imageUrl,
       created_at: row.created_at,
       updated_at: row.updated_at,
-      view_count: counts[row.id] || 0
+      view_count: counts[row.id] || 0,
+      download_count: downloads[row.id] || 0
     };
+  }).sort(function (a, b) {
+    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
   });
   drawNotes();
+  renderHomeLatestNotes();
 }
 
 function drawNoteFilters() {
@@ -808,7 +745,82 @@ async function trackNoteView(note, viewElement) {
     return;
   }
   note.view_count = Number(result.data || 0);
-  if (viewElement) viewElement.textContent = "👁 " + note.view_count + " views";
+  document.querySelectorAll('[data-note-view-count="' + note.id + '"]').forEach(function (el) {
+    el.innerHTML = ic("eye") + '<span>' + note.view_count + ' views</span>';
+  });
+  if (viewElement) viewElement.innerHTML = ic("eye") + '<span>' + note.view_count + ' views</span>';
+}
+
+async function trackNoteDownload(note, button) {
+  if (!supabaseClient || !note.image_url) return;
+  if (button) button.disabled = true;
+  try {
+    var fileName = (note.title || "student-note").replace(/[^a-z0-9\u1780-\u17ff_-]+/gi, "-").replace(/^-+|-+$/g, "") || "student-note";
+    var separator = note.image_url.indexOf("?") >= 0 ? "&" : "?";
+    var downloadUrl = note.image_url + separator + "download=" + encodeURIComponent(fileName + ".jpg");
+    var anchor = document.createElement("a");
+    anchor.href = downloadUrl;
+    anchor.target = "_blank";
+    anchor.rel = "noopener";
+    anchor.download = fileName + ".jpg";
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+
+    var result = await supabaseClient.rpc("record_student_note_download", {
+      p_note_id: note.id,
+      p_visitor_id: getVisitorId()
+    });
+    if (result.error) throw result.error;
+    note.download_count = Number(result.data || 0);
+    document.querySelectorAll('[data-note-download-count="' + note.id + '"]').forEach(function (el) {
+      el.innerHTML = ic("download") + '<span>' + note.download_count + ' downloads</span>';
+    });
+  } catch (error) {
+    console.warn("Could not record note download:", error.message);
+  } finally {
+    if (button) button.disabled = false;
+  }
+}
+
+var imageLightbox = document.getElementById("imageLightbox");
+var lightboxImage = document.getElementById("lightboxImage");
+var lightboxZoomLabel = document.getElementById("lightboxZoomReset");
+var lightboxDownloadButton = document.getElementById("lightboxDownload");
+var activeLightboxNote = null;
+var lightboxScale = 1;
+function setLightboxScale(nextScale) {
+  lightboxScale = Math.min(4, Math.max(0.5, nextScale));
+  if (lightboxImage) lightboxImage.style.transform = "scale(" + lightboxScale + ")";
+  if (lightboxZoomLabel) lightboxZoomLabel.textContent = Math.round(lightboxScale * 100) + "%";
+}
+function openImageLightbox(url, title, note) {
+  if (!imageLightbox || !lightboxImage || !url) return;
+  activeLightboxNote = note || null;
+  if (lightboxDownloadButton) lightboxDownloadButton.hidden = !activeLightboxNote;
+  lightboxImage.src = url;
+  lightboxImage.alt = title || "រូបភាពកំណត់ត្រា";
+  document.getElementById("lightboxTitle").textContent = title || "រូបភាពកំណត់ត្រា";
+  setLightboxScale(1);
+  if (typeof imageLightbox.showModal === "function") imageLightbox.showModal();
+  else imageLightbox.setAttribute("open", "open");
+}
+if (imageLightbox) {
+  document.getElementById("lightboxZoomIn").onclick = function () { setLightboxScale(lightboxScale + 0.25); };
+  document.getElementById("lightboxZoomOut").onclick = function () { setLightboxScale(lightboxScale - 0.25); };
+  document.getElementById("lightboxZoomReset").onclick = function () { setLightboxScale(1); };
+  if (lightboxDownloadButton) lightboxDownloadButton.onclick = function () {
+    if (activeLightboxNote) trackNoteDownload(activeLightboxNote, lightboxDownloadButton);
+  };
+  document.getElementById("lightboxClose").onclick = function () { imageLightbox.close(); };
+  imageLightbox.addEventListener("click", function (event) {
+    if (event.target === imageLightbox) imageLightbox.close();
+  });
+  imageLightbox.addEventListener("close", function () {
+    lightboxImage.removeAttribute("src");
+    activeLightboxNote = null;
+    setLightboxScale(1);
+  });
 }
 
 function observeNoteView(card, note, viewElement) {
@@ -818,12 +830,15 @@ function observeNoteView(card, note, viewElement) {
   }
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+      var cardHeight = entry.boundingClientRect.height || card.offsetHeight || 1;
+      var visibleTarget = Math.min(cardHeight * 0.5, window.innerHeight * 0.5);
+      var enoughVisible = entry.intersectionRect && entry.intersectionRect.height >= visibleTarget;
+      if (entry.isIntersecting && enoughVisible) {
         observer.unobserve(card);
         trackNoteView(note, viewElement);
       }
     });
-  }, { threshold: [0.5] });
+  }, { threshold: [0.1, 0.25, 0.5] });
   observer.observe(card);
 }
 
@@ -851,12 +866,23 @@ function drawNotes() {
     card.setAttribute("data-note-id", note.id);
 
     if (note.image_url) {
+      var imageButton = document.createElement("button");
+      imageButton.type = "button";
+      imageButton.className = "note-image-button";
+      imageButton.setAttribute("aria-label", "ពង្រីករូបភាព៖ " + note.title);
       var image = document.createElement("img");
       image.className = "note-img";
       image.src = note.image_url;
       image.alt = note.title;
       image.loading = "lazy";
-      card.appendChild(image);
+      image.decoding = "async";
+      imageButton.appendChild(image);
+      imageButton.onclick = function () { openImageLightbox(note.image_url, note.title, note); };
+      card.appendChild(imageButton);
+      var zoomHint = document.createElement("span");
+      zoomHint.className = "note-image-hint";
+      zoomHint.innerHTML = ic("zoom-in") + " ពង្រីករូបភាព";
+      card.appendChild(zoomHint);
     }
 
     var meta = document.createElement("div");
@@ -881,12 +907,43 @@ function drawNotes() {
     body.textContent = note.body;
     card.appendChild(body);
 
+    if (note.source_credit) {
+      var source = document.createElement("p");
+      source.className = "note-source-credit";
+      source.textContent = "ប្រភព៖ " + note.source_credit;
+      card.appendChild(source);
+    }
+
+    var detailLink = document.createElement("a");
+    detailLink.className = "note-detail-link";
+    detailLink.href = "note.html?id=" + encodeURIComponent(note.id);
+    detailLink.textContent = "មើលមេរៀនពេញលេញ";
+    card.appendChild(detailLink);
+
     var footer = document.createElement("div");
     footer.className = "note-card-footer";
+    var stats = document.createElement("div");
+    stats.className = "note-stats";
     var viewCount = document.createElement("span");
-    viewCount.className = "note-views";
-    viewCount.textContent = "👁 " + (note.view_count || 0) + " views";
-    footer.appendChild(viewCount);
+    viewCount.className = "note-stat";
+    viewCount.setAttribute("data-note-view-count", note.id);
+    viewCount.innerHTML = ic("eye") + '<span>' + (note.view_count || 0) + ' views</span>';
+    stats.appendChild(viewCount);
+    var downloadCount = document.createElement("span");
+    downloadCount.className = "note-stat";
+    downloadCount.setAttribute("data-note-download-count", note.id);
+    downloadCount.innerHTML = ic("download") + '<span>' + (note.download_count || 0) + ' downloads</span>';
+    stats.appendChild(downloadCount);
+    footer.appendChild(stats);
+
+    if (note.image_url) {
+      var downloadButton = document.createElement("button");
+      downloadButton.type = "button";
+      downloadButton.className = "btn ghost note-action note-download";
+      downloadButton.innerHTML = ic("download") + " ទាញយករូបភាព";
+      downloadButton.onclick = function () { trackNoteDownload(note, downloadButton); };
+      footer.appendChild(downloadButton);
+    }
 
     if (isNoteAdmin) {
       var actions = document.createElement("div");
@@ -894,13 +951,12 @@ function drawNotes() {
       var editButton = document.createElement("button");
       editButton.type = "button";
       editButton.className = "btn ghost note-action";
-      editButton.textContent = "កែសម្រួល";
+      editButton.innerHTML = ic("edit") + " កែសម្រួល";
       editButton.onclick = function () { startNoteEdit(note.id); };
-
       var deleteButton = document.createElement("button");
       deleteButton.type = "button";
       deleteButton.className = "btn ghost note-action note-delete";
-      deleteButton.textContent = "លុប";
+      deleteButton.innerHTML = ic("trash") + " លុប";
       deleteButton.onclick = function () { deleteNote(note.id); };
       actions.append(editButton, deleteButton);
       footer.appendChild(actions);
@@ -920,6 +976,7 @@ function startNoteEdit(noteId) {
   document.getElementById("nTitle").value = note.title;
   document.getElementById("nTag").value = note.tag;
   document.getElementById("nBody").value = note.body;
+  document.getElementById("nSource").value = note.source_credit || "";
   resetPreview();
   if (note.image_url) {
     nPrevImg.src = note.image_url;
@@ -979,6 +1036,7 @@ noteForm.onsubmit = async function (event) {
       title: title,
       class_tag: tag,
       body: body,
+      source_credit: document.getElementById("nSource").value.trim(),
       image_path: imagePath,
       updated_at: new Date().toISOString()
     };
@@ -1106,9 +1164,11 @@ if (importLegacyBtn) importLegacyBtn.onclick = importLegacyNotes;
 
 async function initStudentNotes() {
   if (!hasSupabaseConfig()) {
-    setNoteStatus("មុនពេលប្រើកំណត់ត្រាតាមអ៊ីនធឺណិត សូមកំណត់ Supabase URL និង anon key ក្នុង script.js ហើយអនុវត្ត SQL ក្នុងឯកសារ supabase_setup.sql។", "warning");
+    setNoteStatus("មុនពេលប្រើកំណត់ត្រាតាមអ៊ីនធឺណិត សូមកំណត់ Supabase URL និង anon key ក្នុង site-config.js ហើយអនុវត្ត SQL ក្នុងឯកសារ supabase_setup.sql។", "warning");
     var list = document.getElementById("noteList");
     list.innerHTML = '<p class="muted note-empty">ប្រព័ន្ធកំណត់ត្រាមិនទាន់ភ្ជាប់ database ទេ។ សូមអនុវត្តជំហានក្នុង SETUP.md។</p>';
+    var latest = document.getElementById("homeLatestNotes");
+    if (latest) latest.innerHTML = '<p class="muted">សូមភ្ជាប់ Supabase ដើម្បីបង្ហាញកំណត់ត្រាថ្មីៗ។</p>';
     updateAdminInterface();
     return;
   }
@@ -1124,6 +1184,15 @@ async function initStudentNotes() {
     }
     updateAdminInterface();
     await loadNotes();
+    var portfolioLoads = await Promise.allSettled([loadBooks(), loadProjects()]);
+    portfolioLoads.forEach(function (result, index) {
+      if (result.status === "rejected") {
+        console.error("Portfolio content load failed:", result.reason);
+        setContentStatus(index === 0 ? "bookStatus" : "projectStatus",
+          "មិនអាចទាញយកទិន្នន័យបានទេ។ សូមពិនិត្យថាបានដំណើរការ supabase_upgrade.sql ហើយឬនៅ៖ " + (result.reason && result.reason.message ? result.reason.message : "Database error"),
+          "error");
+      }
+    });
   } catch (error) {
     setNoteStatus("មិនអាចភ្ជាប់ទៅ database បានទេ៖ " + error.message, "error");
   }
@@ -1136,6 +1205,418 @@ async function initStudentNotes() {
     }
   });
 }
+
+
+/* =========================================================
+   Portfolio content manager – Books and Projects
+   Uses the same teacher account and Supabase image bucket.
+   ========================================================= */
+var portfolioBooks = [];
+var portfolioProjects = [];
+var editingBookId = null;
+var editingProjectId = null;
+var bookImageState = { dataUrl: "", clear: false };
+var projectImageState = { dataUrl: "", clear: false };
+
+function escapeHTML(value) {
+  return String(value == null ? "" : value).replace(/[&<>"']/g, function (char) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char];
+  });
+}
+
+function publicImageUrl(path) {
+  if (!path || !supabaseClient) return "";
+  return supabaseClient.storage.from(SUPABASE_BUCKET).getPublicUrl(path).data.publicUrl;
+}
+
+function renderProjects(items) {
+  var grid = document.getElementById("projGrid");
+  var featured = document.getElementById("homeFeatured");
+  if (!grid) return;
+  var projectItems = Array.isArray(items) ? items : [];
+  function cardHTML(project, adminMode) {
+    var tags = (project.technologies || []).map(function (tag) {
+      return '<span class="tag">' + escapeHTML(tag) + '</span>';
+    }).join("");
+    var visual = project.image_url
+      ? '<img src="' + escapeHTML(project.image_url) + '" alt="' + escapeHTML(project.title) + '" loading="lazy" decoding="async">'
+      : ic("img");
+    var safeProjectUrl = "";
+    if (project.project_url) {
+      try {
+        var parsedProjectUrl = new URL(project.project_url, window.location.href);
+        if (parsedProjectUrl.protocol === "http:" || parsedProjectUrl.protocol === "https:") safeProjectUrl = parsedProjectUrl.href;
+      } catch (urlError) { safeProjectUrl = ""; }
+    }
+    var link = safeProjectUrl
+      ? '<a class="project-link" href="' + escapeHTML(safeProjectUrl) + '" target="_blank" rel="noopener noreferrer">បើកគម្រោង ' + ic("external") + '</a>'
+      : "";
+    var admin = adminMode && isNoteAdmin && project.id
+      ? '<div class="content-card-actions"><button type="button" class="btn ghost note-action" data-edit-project="' + escapeHTML(project.id) + '">' + ic("edit") + ' កែសម្រួល</button><button type="button" class="btn ghost note-action note-delete" data-delete-project="' + escapeHTML(project.id) + '">' + ic("trash") + ' លុប</button></div>'
+      : "";
+    return '<article class="card proj"><div class="shot">' + visual + '</div><h3>' + escapeHTML(project.title) + '</h3><p>' + escapeHTML(project.description) + '</p><div class="tags">' + tags + '</div>' + (project.role ? '<dl class="project-role"><dt>តួនាទីរបស់ខ្ញុំ</dt><dd>' + escapeHTML(project.role) + '</dd></dl>' : '') + link + admin + '</article>';
+  }
+  if (!projectItems.length) {
+    grid.innerHTML = '<p class="muted note-empty">មិនទាន់មានគម្រោងទេ។</p>';
+    if (featured) featured.innerHTML = '<p class="muted">មិនទាន់មានគម្រោងណាមួយត្រូវបានបង្ហោះទេ។</p>';
+    return;
+  }
+  grid.innerHTML = projectItems.map(function (project) { return cardHTML(project, true); }).join("");
+  if (featured) featured.innerHTML = projectItems.slice(0, 2).map(function (project) { return cardHTML(project, false); }).join("");
+  grid.querySelectorAll("[data-edit-project]").forEach(function (button) {
+    button.onclick = function () { startProjectEdit(button.getAttribute("data-edit-project")); };
+  });
+  grid.querySelectorAll("[data-delete-project]").forEach(function (button) {
+    button.onclick = function () { deleteProject(button.getAttribute("data-delete-project")); };
+  });
+}
+
+function renderBooks(items) {
+  var grid = document.getElementById("bookGrid");
+  if (!grid) return;
+  var list = Array.isArray(items) ? items : [];
+  if (!list.length) {
+    grid.innerHTML = '<p class="muted note-empty">មិនទាន់មានការពិនិត្យសៀវភៅទេ។ ចូលគណនីគ្រូនៅផ្ទាំងកំណត់ត្រាសិស្ស ដើម្បីបន្ថែមសៀវភៅដំបូង។</p>';
+    return;
+  }
+  grid.innerHTML = list.map(function (book) {
+    var rating = Math.max(1, Math.min(5, Number(book.rating || 5)));
+    var stars = "";
+    for (var i = 1; i <= 5; i++) stars += ic("star", i > rating ? "off" : "");
+    var cover = book.cover_url
+      ? '<img src="' + escapeHTML(book.cover_url) + '" alt="គម្រប ' + escapeHTML(book.title) + '" loading="lazy" decoding="async">'
+      : ic("book");
+    var admin = isNoteAdmin && book.id
+      ? '<div class="content-card-actions"><button type="button" class="btn ghost note-action" data-edit-book="' + escapeHTML(book.id) + '">' + ic("edit") + ' កែសម្រួល</button><button type="button" class="btn ghost note-action note-delete" data-delete-book="' + escapeHTML(book.id) + '">' + ic("trash") + ' លុប</button></div>'
+      : "";
+    return '<article class="card book glass-card"><div class="book-cover">' + cover + '</div><div class="book-info"><h3>' + escapeHTML(book.title) + '</h3><div class="by">' + escapeHTML(book.author || "") + '</div><div class="stars" aria-label="ពិន្ទុ ' + rating + '/5">' + stars + '</div>' + (book.quote ? '<blockquote>« ' + escapeHTML(book.quote) + ' »</blockquote>' : '') + (book.recommendation ? '<div class="rec-pill">' + ic("book") + '<span>' + escapeHTML(book.recommendation) + '</span></div>' : '') + admin + '</div></article>';
+  }).join("");
+  grid.querySelectorAll("[data-edit-book]").forEach(function (button) {
+    button.onclick = function () { startBookEdit(button.getAttribute("data-edit-book")); };
+  });
+  grid.querySelectorAll("[data-delete-book]").forEach(function (button) {
+    button.onclick = function () { deleteBook(button.getAttribute("data-delete-book")); };
+  });
+}
+
+function setContentStatus(id, message, type) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = message || "";
+  el.className = "note-status" + (type ? " " + type : "");
+}
+
+function updatePortfolioAdminInterface() {
+  var bookPanel = document.getElementById("bookAdmin");
+  var projectPanel = document.getElementById("projectAdmin");
+  if (bookPanel) bookPanel.hidden = !isNoteAdmin;
+  if (projectPanel) projectPanel.hidden = !isNoteAdmin;
+  var bookHint = document.getElementById("bookAdminHint");
+  var projectHint = document.getElementById("projectAdminHint");
+  if (bookHint) bookHint.hidden = isNoteAdmin;
+  if (projectHint) projectHint.hidden = isNoteAdmin;
+}
+
+async function loadBooks() {
+  var result = await supabaseClient.from("portfolio_books")
+    .select("id, title, author, rating, quote, recommendation, cover_path, created_at, updated_at")
+    .order("created_at", { ascending: false });
+  if (result.error) throw result.error;
+  portfolioBooks = (result.data || []).map(function (row) {
+    return Object.assign({}, row, { cover_url: publicImageUrl(row.cover_path) });
+  });
+  renderBooks(portfolioBooks);
+}
+
+async function loadProjects() {
+  var result = await supabaseClient.from("portfolio_projects")
+    .select("id, title, description, technologies, role, project_url, image_path, created_at, updated_at")
+    .order("created_at", { ascending: false });
+  if (result.error) throw result.error;
+  portfolioProjects = (result.data || []).map(function (row) {
+    return Object.assign({}, row, { image_url: publicImageUrl(row.image_path) });
+  });
+  renderProjects(portfolioProjects);
+}
+
+function compressContentImage(file) {
+  return new Promise(function (resolve, reject) {
+    var reader = new FileReader();
+    reader.onerror = function () { reject(new Error("មិនអាចអានរូបភាពបានទេ។")); };
+    reader.onload = function (event) {
+      var image = new Image();
+      image.onerror = function () { reject(new Error("ឯកសាររូបភាពមិនត្រឹមត្រូវទេ។")); };
+      image.onload = function () {
+        var maxWidth = 1400;
+        var scale = image.width > maxWidth ? maxWidth / image.width : 1;
+        var canvas = document.createElement("canvas");
+        canvas.width = Math.max(1, Math.round(image.width * scale));
+        canvas.height = Math.max(1, Math.round(image.height * scale));
+        canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL("image/jpeg", 0.82));
+      };
+      image.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function setupContentImagePicker(prefix, state) {
+  var input = document.getElementById(prefix + "ImageInput");
+  var pick = document.getElementById(prefix + "ImagePick");
+  var preview = document.getElementById(prefix + "ImagePreview");
+  var previewImg = document.getElementById(prefix + "ImagePreviewImg");
+  var clear = document.getElementById(prefix + "ImageClear");
+  if (!input || !pick || !preview || !previewImg || !clear) return;
+  pick.onclick = function () { input.click(); };
+  input.onchange = async function () {
+    var file = input.files && input.files[0];
+    if (!file) return;
+    if (!file.type || file.type.indexOf("image/") !== 0) {
+      setContentStatus(prefix === "book" ? "bookStatus" : "projectStatus", "សូមជ្រើសរើសឯកសាររូបភាព។", "error");
+      return;
+    }
+    try {
+      state.dataUrl = await compressContentImage(file);
+      state.clear = false;
+      previewImg.src = state.dataUrl;
+      preview.hidden = false;
+    } catch (error) {
+      setContentStatus(prefix === "book" ? "bookStatus" : "projectStatus", error.message, "error");
+    }
+  };
+  clear.onclick = function () {
+    state.dataUrl = "";
+    state.clear = true;
+    input.value = "";
+    previewImg.removeAttribute("src");
+    preview.hidden = true;
+  };
+}
+
+function resetContentImage(prefix, state) {
+  state.dataUrl = "";
+  state.clear = false;
+  var input = document.getElementById(prefix + "ImageInput");
+  var preview = document.getElementById(prefix + "ImagePreview");
+  var previewImg = document.getElementById(prefix + "ImagePreviewImg");
+  if (input) input.value = "";
+  if (preview) preview.hidden = true;
+  if (previewImg) previewImg.removeAttribute("src");
+}
+
+async function uploadPortfolioImage(dataUrl, folder) {
+  if (!dataUrl) return null;
+  var blob = await fetch(dataUrl).then(function (response) { return response.blob(); });
+  var randomName = window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now() + "-" + Math.random().toString(36).slice(2);
+  var path = "portfolio/" + folder + "/" + randomName + ".jpg";
+  var result = await supabaseClient.storage.from(SUPABASE_BUCKET).upload(path, blob, {
+    contentType: "image/jpeg", cacheControl: "3600", upsert: false
+  });
+  if (result.error) throw result.error;
+  return path;
+}
+
+async function removePortfolioImage(path) {
+  if (!path) return;
+  var result = await supabaseClient.storage.from(SUPABASE_BUCKET).remove([path]);
+  if (result.error) console.warn("Could not remove portfolio image:", result.error.message);
+}
+
+function openBookEditor(book) {
+  var form = document.getElementById("bookForm");
+  form.reset();
+  editingBookId = book ? book.id : null;
+  resetContentImage("book", bookImageState);
+  document.getElementById("bookFormHeading").textContent = book ? "កែសម្រួលការពិនិត្យសៀវភៅ" : "ការពិនិត្យសៀវភៅថ្មី";
+  document.getElementById("bookTitle").value = book ? book.title : "";
+  document.getElementById("bookAuthor").value = book ? (book.author || "") : "";
+  document.getElementById("bookRating").value = book ? String(book.rating || 5) : "5";
+  document.getElementById("bookQuote").value = book ? (book.quote || "") : "";
+  document.getElementById("bookRecommendation").value = book ? (book.recommendation || "") : "";
+  if (book && book.cover_url) {
+    document.getElementById("bookImagePreviewImg").src = book.cover_url;
+    document.getElementById("bookImagePreview").hidden = false;
+  }
+  form.hidden = false;
+  document.getElementById("bookForm").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function startBookEdit(id) {
+  if (!isNoteAdmin) return;
+  var book = portfolioBooks.find(function (item) { return item.id === id; });
+  if (book) openBookEditor(book);
+}
+
+function closeBookEditor() {
+  document.getElementById("bookForm").reset();
+  document.getElementById("bookForm").hidden = true;
+  editingBookId = null;
+  resetContentImage("book", bookImageState);
+}
+
+async function saveBook(event) {
+  event.preventDefault();
+  if (!isNoteAdmin) return;
+  var button = document.getElementById("bookSaveBtn");
+  button.disabled = true;
+  setContentStatus("bookStatus", "កំពុងរក្សាទុកការពិនិត្យសៀវភៅ...", "loading");
+  try {
+    var old = editingBookId ? portfolioBooks.find(function (item) { return item.id === editingBookId; }) : null;
+    var coverPath = old ? old.cover_path : null;
+    if (bookImageState.dataUrl) coverPath = await uploadPortfolioImage(bookImageState.dataUrl, "books");
+    else if (bookImageState.clear) coverPath = null;
+    var payload = {
+      title: document.getElementById("bookTitle").value.trim(),
+      author: document.getElementById("bookAuthor").value.trim(),
+      rating: Number(document.getElementById("bookRating").value),
+      quote: document.getElementById("bookQuote").value.trim(),
+      recommendation: document.getElementById("bookRecommendation").value.trim(),
+      cover_path: coverPath,
+      updated_at: new Date().toISOString()
+    };
+    var result = editingBookId
+      ? await supabaseClient.from("portfolio_books").update(payload).eq("id", editingBookId).select().single()
+      : await supabaseClient.from("portfolio_books").insert(payload).select().single();
+    if (result.error) throw result.error;
+    if (old && old.cover_path && old.cover_path !== coverPath) await removePortfolioImage(old.cover_path);
+    closeBookEditor();
+    setContentStatus("bookStatus", "បានរក្សាទុកការពិនិត្យសៀវភៅ។", "success");
+    await loadBooks();
+  } catch (error) {
+    setContentStatus("bookStatus", "មិនអាចរក្សាទុកបានទេ៖ " + error.message, "error");
+  } finally { button.disabled = false; }
+}
+
+async function deleteBook(id) {
+  if (!isNoteAdmin) return;
+  var book = portfolioBooks.find(function (item) { return item.id === id; });
+  if (!book || !window.confirm('តើអ្នកប្រាកដថាចង់លុបការពិនិត្យសៀវភៅ "' + book.title + '" មែនទេ?')) return;
+  var result = await supabaseClient.from("portfolio_books").delete().eq("id", id);
+  if (result.error) { setContentStatus("bookStatus", result.error.message, "error"); return; }
+  await removePortfolioImage(book.cover_path);
+  setContentStatus("bookStatus", "បានលុបការពិនិត្យសៀវភៅ។", "success");
+  await loadBooks();
+}
+
+function openProjectEditor(project) {
+  var form = document.getElementById("projectForm");
+  form.reset();
+  editingProjectId = project ? project.id : null;
+  resetContentImage("project", projectImageState);
+  document.getElementById("projectFormHeading").textContent = project ? "កែសម្រួលគម្រោង" : "គម្រោងថ្មី";
+  document.getElementById("projectTitle").value = project ? project.title : "";
+  document.getElementById("projectDescription").value = project ? project.description : "";
+  document.getElementById("projectTech").value = project ? (project.technologies || []).join(", ") : "";
+  document.getElementById("projectRole").value = project ? (project.role || "") : "";
+  document.getElementById("projectUrl").value = project ? (project.project_url || "") : "";
+  if (project && project.image_url) {
+    document.getElementById("projectImagePreviewImg").src = project.image_url;
+    document.getElementById("projectImagePreview").hidden = false;
+  }
+  form.hidden = false;
+  form.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function startProjectEdit(id) {
+  if (!isNoteAdmin) return;
+  var project = portfolioProjects.find(function (item) { return item.id === id; });
+  if (project) openProjectEditor(project);
+}
+
+function closeProjectEditor() {
+  document.getElementById("projectForm").reset();
+  document.getElementById("projectForm").hidden = true;
+  editingProjectId = null;
+  resetContentImage("project", projectImageState);
+}
+
+async function saveProject(event) {
+  event.preventDefault();
+  if (!isNoteAdmin) return;
+  var button = document.getElementById("projectSaveBtn");
+  button.disabled = true;
+  setContentStatus("projectStatus", "កំពុងរក្សាទុកគម្រោង...", "loading");
+  try {
+    var old = editingProjectId ? portfolioProjects.find(function (item) { return item.id === editingProjectId; }) : null;
+    var imagePath = old ? old.image_path : null;
+    if (projectImageState.dataUrl) imagePath = await uploadPortfolioImage(projectImageState.dataUrl, "projects");
+    else if (projectImageState.clear) imagePath = null;
+    var technologies = document.getElementById("projectTech").value.split(",").map(function (item) { return item.trim(); }).filter(Boolean);
+    var projectUrl = document.getElementById("projectUrl").value.trim();
+    var payload = {
+      title: document.getElementById("projectTitle").value.trim(),
+      description: document.getElementById("projectDescription").value.trim(),
+      technologies: technologies,
+      role: document.getElementById("projectRole").value.trim(),
+      project_url: projectUrl || null,
+      image_path: imagePath,
+      updated_at: new Date().toISOString()
+    };
+    var result = editingProjectId
+      ? await supabaseClient.from("portfolio_projects").update(payload).eq("id", editingProjectId).select().single()
+      : await supabaseClient.from("portfolio_projects").insert(payload).select().single();
+    if (result.error) throw result.error;
+    if (old && old.image_path && old.image_path !== imagePath) await removePortfolioImage(old.image_path);
+    closeProjectEditor();
+    setContentStatus("projectStatus", "បានរក្សាទុកគម្រោង។", "success");
+    await loadProjects();
+  } catch (error) {
+    setContentStatus("projectStatus", "មិនអាចរក្សាទុកបានទេ៖ " + error.message, "error");
+  } finally { button.disabled = false; }
+}
+
+async function deleteProject(id) {
+  if (!isNoteAdmin) return;
+  var project = portfolioProjects.find(function (item) { return item.id === id; });
+  if (!project || !window.confirm('តើអ្នកប្រាកដថាចង់លុបគម្រោង "' + project.title + '" មែនទេ?')) return;
+  var result = await supabaseClient.from("portfolio_projects").delete().eq("id", id);
+  if (result.error) { setContentStatus("projectStatus", result.error.message, "error"); return; }
+  await removePortfolioImage(project.image_path);
+  setContentStatus("projectStatus", "បានលុបគម្រោង។", "success");
+  await loadProjects();
+}
+
+document.getElementById("addBookBtn").onclick = function () { openBookEditor(null); };
+document.getElementById("bookCancelBtn").onclick = closeBookEditor;
+document.getElementById("bookForm").onsubmit = saveBook;
+document.getElementById("addProjectBtn").onclick = function () { openProjectEditor(null); };
+document.getElementById("projectCancelBtn").onclick = closeProjectEditor;
+document.getElementById("projectForm").onsubmit = saveProject;
+setupContentImagePicker("book", bookImageState);
+setupContentImagePicker("project", projectImageState);
+
+function renderHomeLatestNotes() {
+  var grid = document.getElementById("homeLatestNotes");
+  if (!grid) return;
+  if (!notes.length) {
+    grid.innerHTML = '<p class="muted">មិនទាន់មានកំណត់ត្រាថ្មីទេ។</p>';
+    return;
+  }
+  grid.innerHTML = notes.slice().sort(function (a, b) {
+    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+  }).slice(0, 3).map(function (note) {
+    var image = note.image_url
+      ? '<button type="button" class="latest-image-button" data-latest-image="' + escapeHTML(note.id) + '" aria-label="ពង្រីករូបភាព ' + escapeHTML(note.title) + '"><img src="' + escapeHTML(note.image_url) + '" alt="' + escapeHTML(note.title) + '" loading="lazy" decoding="async"></button>'
+      : '<div class="latest-image-placeholder">' + ic("note") + '</div>';
+    return '<article class="card latest-note-card">' + image + '<div class="latest-note-content">' + (note.tag ? '<span class="tag">' + escapeHTML(note.tag) + '</span>' : '') + '<h3>' + escapeHTML(note.title) + '</h3><p>' + escapeHTML(note.body) + '</p><div class="latest-note-meta"><time>' + escapeHTML(formatNoteDate(note.created_at)) + '</time><span data-note-view-count="' + escapeHTML(note.id) + '" class="note-stat">' + ic("eye") + '<span>' + (note.view_count || 0) + ' views</span></span><span data-note-download-count="' + escapeHTML(note.id) + '" class="note-stat">' + ic("download") + '<span>' + (note.download_count || 0) + ' downloads</span></span></div><a class="latest-read-link" href="note.html?id=' + escapeHTML(note.id) + '">អានកំណត់ត្រា ' + ic("external") + '</a></div></article>';
+  }).join("");
+  grid.querySelectorAll("[data-latest-image]").forEach(function (button) {
+    button.onclick = function () {
+      var note = notes.find(function (item) { return item.id === button.getAttribute("data-latest-image"); });
+      if (note) openImageLightbox(note.image_url, note.title, note);
+    };
+  });
+  grid.querySelectorAll(".latest-note-card").forEach(function (card) {
+    var noteId = card.querySelector("[data-note-view-count]");
+    var note = noteId && notes.find(function (item) { return item.id === noteId.getAttribute("data-note-view-count"); });
+    if (note) observeNoteView(card, note, noteId);
+  });
+}
+
+renderBooks(defaultBooks);
+renderProjects(defaultProjects);
+updatePortfolioAdminInterface();
 
 updateAdminInterface();
 initStudentNotes();

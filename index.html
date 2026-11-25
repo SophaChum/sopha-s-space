@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="km">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>sopha's space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans+Khmer:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+        />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+      </symbol>
+
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path
+          d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"
+        />
+      </symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24">
+        <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+      </symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24">
+        <path
+          d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+        />
+      </symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24">
+        <path d="m2 9 10-5 10 5-10 5z" />
+        <path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </symbol>
+      <symbol id="i-book" viewBox="0 0 24 24">
+        <path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" />
+        <path d="M4 21V5" />
+      </symbol>
+      <symbol id="i-note" viewBox="0 0 24 24">
+        <path
+          d="M5 3h14a1 1 0 0 1 1 1v11l-5 5H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"
+        />
+        <path d="M15 20v-5h5" />
+      </symbol>
+      <symbol id="i-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol>
+      <symbol id="i-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <path
+          d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"
+        />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path
+          d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+        />
+      </symbol>
+      <symbol id="i-in" viewBox="0 0 24 24">
+        <path
+          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+        />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </symbol>
+      <symbol id="i-send" viewBox="0 0 24 24">
+        <path d="m22 2-7 20-4-9-9-4z" />
+        <path d="M22 2 11 13" />
+      </symbol>
+      <symbol id="i-fb" viewBox="0 0 24 24">
+        <path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z" />
+      </symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24">
+        <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24">
+        <circle cx="12" cy="9" r="6" />
+        <path d="m8.5 14-1.5 7 5-3 5 3-1.5-7" />
+      </symbol>
+      <symbol id="i-brief" viewBox="0 0 24 24">
+        <rect x="3" y="7" width="18" height="13" rx="2" />
+        <path d="M9 7V4h6v3M3 13h18" />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24">
+        <path d="m8 7-5 5 5 5M16 7l5 5-5 5" />
+      </symbol>
+      <symbol id="i-img" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <circle cx="9" cy="10" r="2" />
+        <path d="m21 16-5-5-9 9" />
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21a8 8 0 0 1 16 0" />
+      </symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path
+          d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"
+        />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z" />
+        <circle cx="12" cy="10" r="2.500" />
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+      </symbol>
+    </svg>
+
+    <header><div class="header-stack">
+      <div class="brand-pill">Sopha's Space</div>
+      <nav id="nav"></nav></div>
+    </header>
+
+    <main>
+      <div class="slider" id="slider" aria-roledescription="carousel">
+        <div class="track" id="track">
+          <div class="slide">
+            <div>
+              <span class="badge">ឆាប់ៗនេះ</span>
+              <h3>វគ្គសិក្សាភាសាអង់គ្លេស</h3>
+              <p class="muted">
+                និយាយ ស្តាប់ អាន សរសេរ – សម្រាប់សិស្សគ្រប់កម្រិត។ ចុះឈ្មោះមុនគេ!
+              </p>
+              <a href="#contact" class="btn sl-cta">
+                <svg class="i"><use href="#i-mail" /></svg> ចុះឈ្មោះមុនគេ
+              </a>
+            </div>
+            <div class="big">English</div>
+          </div>
+          <div class="slide">
+            <div>
+              <span class="badge">ឆាប់ៗនេះ</span>
+              <h3>វគ្គសិក្សាភាសាចិន</h3>
+              <p class="muted">
+                ចាប់ផ្តើមពីមូលដ្ឋាន រៀនអក្សរចិន និងការសន្ទនាប្រចាំថ្ងៃ។
+              </p>
+              <a href="#contact" class="btn sl-cta">
+                <svg class="i"><use href="#i-mail" /></svg> ចុះឈ្មោះមុនគេ
+              </a>
+            </div>
+            <div class="big">中文</div>
+          </div>
+        </div>
+        <button class="sl-btn prev" id="prev" aria-label="មុន">
+          <svg class="i"><use href="#i-l" /></svg>
+        </button>
+        <button class="sl-btn next" id="next" aria-label="បន្ទាប់">
+          <svg class="i"><use href="#i-r" /></svg>
+        </button>
+        <div class="dots" id="dots"></div>
+      </div>
+
+      <section id="home">
+        <div class="hero">
+          <button
+            class="avatar"
+            id="avatar"
+            aria-label="ជ្រើសរើសរូបថតប្រវត្តិរូប"
+          >
+            <img src="profile.jpg" alt="រូបថតរបស់ ជុំ សុផា" />
+          </button>
+          <input type="file" id="file" accept="image/*" hidden />
+          <div>
+            <h1>ជុំ សុផា</h1>
+            <p class="role">
+              គ្រូបង្រៀន ICT - អង់គ្លេស និងប្រធានក្រុមបច្ចេកវិទ្យា
+            </p>
+            <p class="muted">
+              បញ្ចប់បរិញ្ញាបត្រសិល្បៈ ជំនាញវិធីសាស្ត្របង្រៀនភាសាអង់គ្លេស។
+              ខ្ញុំមានបទពិសោធន៍គ្រប់គ្រងទិន្នន័យសិស្ស រចនាក្រាហ្វិក
+              និងរដ្ឋបាលទូទៅ ហើយបង្កើតវេបសាយ
+              និងកម្មវិធីដើម្បីជួយឱ្យសិស្សខ្មែររៀនបានងាយស្រួលជាងមុន។
+            </p>
+            <div
+              style="
+                margin-top: 20px;
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+              "
+            >
+              <a class="btn" href="#projects"
+                ><svg class="i"><use href="#i-folder" /></svg>មើលគម្រោង</a
+              >
+              <a class="btn ghost" href="#contact"
+                ><svg class="i"><use href="#i-mail" /></svg>ទាក់ទងខ្ញុំ</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Key Highlights Strip -->
+        <div class="highlights">
+          <div class="card hl">
+            <svg class="i"><use href="#i-brief" /></svg>
+            <div>
+              <h3>ប្រធានក្រុមបច្ចេកវិទ្យា</h3>
+              <p>គ្រប់គ្រងប្រព័ន្ធឌីជីថល និងបង្រៀន ICT</p>
+            </div>
+          </div>
+          <div class="card hl">
+            <svg class="i"><use href="#i-code" /></svg>
+            <div>
+              <h3>អ្នកអភិវឌ្ឍ EdTech ខ្មែរ</h3>
+              <p>បង្កើតកម្មវិធីគ្រប់គ្រងសាលា និងសិស្ស</p>
+            </div>
+          </div>
+          <div class="card hl">
+            <svg class="i"><use href="#i-globe" /></svg>
+            <div>
+              <h3>៣ ភាសា</h3>
+              <p>ភាសាខ្មែរ ភាសាអង់គ្លេស និងភាសាចិន</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Projects Preview -->
+        <div class="home-sec">
+          <div class="sec-head">
+            <h2>គម្រោងឆ្នើម</h2>
+            <a href="#projects" class="btn ghost">មើលទាំងអស់</a>
+          </div>
+          <div class="grid" id="homeFeatured"></div>
+        </div>
+      </section>
+
+      <section id="skills" hidden>
+        <h2>ជំនាញ</h2>
+        <div class="grid" id="skillsGrid"></div>
+      </section>
+      <section id="projects" hidden>
+        <h2>គម្រោង</h2>
+        <div class="grid" id="projGrid"></div>
+      </section>
+      <section id="education" hidden>
+        <h2>ការសិក្សា និងបទពិសោធន៍</h2>
+        <div id="eduWrap"></div>
+      </section>
+
+      <section id="contact" hidden>
+        <h2>ទំនាក់ទំនង</h2>
+        <div class="links">
+          <a class="link" href="mailto:sophachum08@gmail.com"
+            ><svg class="i"><use href="#i-mail" /></svg>
+            <div>អ៊ីមែល<small>sophachum08@gmail.com</small></div></a
+          >
+          <a class="link" href="tel:+855962437713"
+            ><svg class="i"><use href="#i-phone" /></svg>
+            <div>ទូរស័ព្ទ<small>+855 96 24 37 713</small></div></a
+          >
+          <div class="link">
+            <svg class="i"><use href="#i-pin" /></svg>
+            <div>អាសយដ្ឋាន<small>ត្រាំកក់ តាកែវ</small></div>
+          </div>
+          <a
+            class="link"
+            href="https://linkedin.com/in/your-name"
+            target="_blank"
+            rel="noopener"
+            ><svg class="i"><use href="#i-in" /></svg>
+            <div>LinkedIn<small>linkedin.com/in/your-name</small></div></a
+          >
+          <a
+            class="link"
+            href="https://github.com/your-name"
+            target="_blank"
+            rel="noopener"
+            ><svg class="i"><use href="#i-github" /></svg>
+            <div>GitHub<small>github.com/your-name</small></div></a
+          >
+          <a
+            class="link"
+            href="https://t.me/your_name"
+            target="_blank"
+            rel="noopener"
+            ><svg class="i"><use href="#i-send" /></svg>
+            <div>Telegram<small>@your_name</small></div></a
+          >
+          <a
+            class="link"
+            href="https://facebook.com/your.name"
+            target="_blank"
+            rel="noopener"
+            ><svg class="i"><use href="#i-fb" /></svg>
+            <div>Facebook<small>facebook.com/your.name</small></div></a
+          >
+        </div>
+      </section>
+
+      <section id="books" hidden>
+        <h2>ជ្រុងសៀវភៅ</h2>
+        <div class="grid" id="bookGrid"></div>
+      </section>
+
+      <section id="notes" hidden>
+        <h2>កំណត់ត្រាសម្រាប់សិស្ស</h2>
+
+        <div class="note-admin-card">
+          <p class="note-admin-intro">សម្រាប់គ្រូ៖ ចូលគណនីដើម្បីបង្ហោះ កែសម្រួល ឬលុបកំណត់ត្រា។ សិស្សអាចមើលកំណត់ត្រាបានដោយមិនចាំបាច់ចូលគណនី។</p>
+          <div id="noteStatus" class="note-status" role="status" aria-live="polite"></div>
+
+          <form id="noteLoginForm" class="note-login-form">
+            <input id="noteAdminEmail" type="email" autocomplete="username" placeholder="អ៊ីមែលគ្រូ" required />
+            <input id="noteAdminPassword" type="password" autocomplete="current-password" placeholder="ពាក្យសម្ងាត់" required />
+            <button type="submit" class="btn">ចូលគណនីគ្រូ</button>
+          </form>
+
+          <div id="noteAdminTools" class="note-admin-tools" hidden>
+            <span class="admin-signed-in">បានចូលជាគ្រូគ្រប់គ្រង</span>
+            <div class="note-admin-actions">
+              <button type="button" id="importLegacyBtn" class="btn ghost" hidden>នាំចូលកំណត់ត្រាចាស់</button>
+              <button type="button" id="noteLogoutBtn" class="btn ghost">ចាកចេញ</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="noteEditor" hidden>
+          <h3 class="note-editor-heading">បង្ហោះកំណត់ត្រាថ្មី</h3>
+          <form id="noteForm">
+            <input type="file" id="nImg" accept="image/*" hidden />
+            <div class="note-fields">
+              <input id="nTitle" placeholder="ចំណងជើងកំណត់ត្រា..." required />
+              <button type="button" id="nPickBtn" class="btn ghost note-pick">
+                <svg class="i"><use href="#i-img" /></svg>
+                <span>បន្ថែមរូបភាព</span>
+              </button>
+              <div class="note-tag-row">
+                <input
+                  id="nTag"
+                  list="classList"
+                  placeholder="បញ្ចូលឈ្មោះថ្នាក់ (ឧ. ថ្នាក់ទី៨, ICT, English)..."
+                  required
+                />
+                <datalist id="classList">
+                  <option value="ថ្នាក់ទី៨"></option>
+                  <option value="ICT មូលដ្ឋាន"></option>
+                  <option value="ភាសាអង់គ្លេស"></option>
+                  <option value="ភាសាចិន"></option>
+                </datalist>
+              </div>
+              <textarea id="nBody" placeholder="សរសេរកំណត់ត្រាសម្រាប់សិស្ស..." required></textarea>
+              <div id="nPreview" class="note-prev" hidden>
+                <img id="nPrevImg" alt="រូបភាពមើលជាមុន" />
+                <button type="button" id="nClearImg" aria-label="ដករូបភាពចេញ">×</button>
+              </div>
+            </div>
+            <div class="note-form-actions">
+              <button id="noteSubmitBtn" type="submit" class="btn">រក្សាទុកកំណត់ត្រា</button>
+              <button id="cancelNoteEditBtn" type="button" class="btn ghost" hidden>បោះបង់ការកែសម្រួល</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="noteFilters" class="edu-tabs"></div>
+        <div id="noteList" aria-live="polite"></div>
+      </section>
+    </main>
+    <footer>© <span id="yr"></span> ជុំ សុផា</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Noto+Sans+Khmer:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -186,18 +186,7 @@
     <a class="skip-link" href="#main-content">រំលងទៅមាតិកា</a>
     <header><div class="header-stack">
       <div class="brand-pill">Sopha's Space</div>
-      <nav id="nav" aria-label="Main navigation">
-        <a href="#home" aria-current="page">ទំព័រដើម</a>
-        <a href="#skills">ជំនាញ</a>
-        <a href="#projects">គម្រោង</a>
-        <a href="#education">ការសិក្សា និងបទពិសោធន៍</a>
-        <a href="#books">ជ្រុងសៀវភៅ</a>
-        <a href="#notes">កំណត់ត្រាសិស្ស</a>
-        <a href="#contact">ទំនាក់ទំនង</a>
-        <button type="button" class="theme-btn" id="themeToggle" aria-label="ប្តូរទៅរបៀបងងឹត" title="ប្តូរទៅរបៀបងងឹត" aria-pressed="false">
-          <svg class="i" aria-hidden="true"><use id="themeIcon" href="#i-moon" /></svg>
-        </button>
-      </nav>
+      <nav id="nav" aria-label="Main navigation"></nav>
     </div>
     </header>
 
@@ -247,7 +236,7 @@
             id="avatar"
             aria-label="ជ្រើសរើសរូបថតប្រវត្តិរូប"
           >
-            <img src="assets/images/profile.png" alt="រូបថតរបស់ ជុំ សុផា" />
+            <img src="profile.png" alt="រូបថតរបស់ ជុំ សុផា" />
           </button>
           <input type="file" id="file" accept="image/*" hidden />
           <div>
@@ -472,12 +461,12 @@
             <p>សូមសរសេរការពន្យល់ផ្ទាល់ខ្លួនឱ្យច្បាស់ បន្ថែមឧទាហរណ៍ ឬជំហានអនុវត្ត ហើយបញ្ជាក់ប្រភពនៅពេលប្រើសម្ភារៈរបស់អ្នកដទៃ។ បង្ហោះតែរូបភាព និងឯកសារដែលអ្នកមានសិទ្ធិប្រើប្រាស់។</p>
           </div>
           <form id="noteForm">
-            <input type="file" id="nImg" accept="image/*" multiple hidden />
+            <input type="file" id="nImg" accept="image/*" hidden />
             <div class="note-fields">
               <input id="nTitle" placeholder="ចំណងជើងកំណត់ត្រា" required />
               <button type="button" id="nPickBtn" class="btn ghost note-pick">
                 <svg class="i"><use href="#i-img" /></svg>
-                <span>បន្ថែមរូបភាព (អតិបរមា ១០)</span>
+                <span>បន្ថែមរូបភាព</span>
               </button>
               <div class="note-tag-row">
                 <input
@@ -493,17 +482,11 @@
                   <option value="ភាសាចិន"></option>
                 </datalist>
               </div>
-              <div class="note-rich-editor">
-                <div class="note-format-toolbar" role="toolbar" aria-label="ទម្រង់អត្ថបទកំណត់ត្រា">
-                  <button type="button" class="btn ghost note-format-btn" data-command="bold" aria-label="អក្សរដិត" title="អក្សរដិត"><strong>B</strong></button>
-                  <button type="button" class="btn ghost note-format-btn" data-command="italic" aria-label="អក្សរទ្រេត" title="អក្សរទ្រេត"><em>I</em></button>
-                  <button type="button" class="btn ghost note-format-btn" data-command="formatBlock" data-value="h2" aria-label="ចំណងជើង" title="ចំណងជើង">H2</button>
-                  <button type="button" class="btn ghost note-format-btn" data-command="formatBlock" data-value="h3" aria-label="ចំណងជើងរង" title="ចំណងជើងរង">H3</button>
-                  <button type="button" class="btn ghost note-format-btn" data-command="insertUnorderedList" aria-label="បញ្ជីចំណុច" title="បញ្ជីចំណុច">•</button>
-                </div>
-                <div id="nBody" class="note-rich-input" contenteditable="true" role="textbox" aria-multiline="true" aria-label="ខ្លឹមសារកំណត់ត្រា" data-placeholder="សរសេរកំណត់ត្រាសម្រាប់សិស្ស... (បន្ថែមការពន្យល់ និងឧទាហរណ៍)"></div>
+              <textarea id="nBody" placeholder="សរសេរកំណត់ត្រាសម្រាប់សិស្ស... (បន្ថែមការពន្យល់ និងឧទាហរណ៍)" required></textarea>
+              <div id="nPreview" class="note-prev" hidden>
+                <img id="nPrevImg" alt="រូបភាពមើលជាមុន" />
+                <button type="button" id="nClearImg" aria-label="ដករូបភាពចេញ">×</button>
               </div>
-              <div id="nPreview" class="note-preview-gallery" aria-label="រូបភាពដែលបានជ្រើសរើស" hidden></div>
             </div>
             <label class="note-source-label" for="nSource">ប្រភព / ការទទួលស្គាល់ (មិនចាំបាច់)</label>
             <input id="nSource" maxlength="500" placeholder="ឧ. សៀវភៅសិក្សា មេរៀនទី ២ ឬ URL ប្រភព" />
@@ -555,85 +538,8 @@
       </nav>
     </footer>
 
-    <script>
-      (() => {
-      const mainNav = document.getElementById("nav");
-      const mainContent = document.getElementById("main-content");
-      const contentSections = [...mainContent.querySelectorAll(":scope > section")];
-      const themeToggle = document.getElementById("themeToggle");
-      const themeIcon = document.getElementById("themeIcon");
-      const root = document.documentElement;
-      const savedTheme = localStorage.getItem("sopha-theme");
-      if (savedTheme === "light" || savedTheme === "dark") {
-        root.dataset.theme = savedTheme;
-      }
-
-      function updateThemeControl() {
-        const isDark = root.dataset.theme
-          ? root.dataset.theme === "dark"
-          : window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const label = isDark ? "ប្តូរទៅរបៀបភ្លឺ" : "ប្តូរទៅរបៀបងងឹត";
-        themeIcon.setAttribute("href", isDark ? "#i-sun" : "#i-moon");
-        themeToggle.setAttribute("aria-label", label);
-        themeToggle.setAttribute("title", label);
-        themeToggle.setAttribute("aria-pressed", String(isDark));
-      }
-
-      themeToggle.addEventListener("click", () => {
-        const isDark = root.dataset.theme
-          ? root.dataset.theme === "dark"
-          : window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const nextTheme = isDark ? "light" : "dark";
-        root.dataset.theme = nextTheme;
-        localStorage.setItem("sopha-theme", nextTheme);
-        updateThemeControl();
-      });
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-        if (!root.dataset.theme) updateThemeControl();
-      });
-      updateThemeControl();
-
-      function showSection(id, updateHistory = false) {
-        const selected = contentSections.find((section) => section.id === id);
-        if (!selected) return false;
-
-        contentSections.forEach((section) => {
-          section.hidden = section !== selected;
-        });
-        mainNav.querySelectorAll('a[href^="#"]').forEach((link) => {
-          if (link.hash === `#${id}`) {
-            link.setAttribute("aria-current", "page");
-          } else {
-            link.removeAttribute("aria-current");
-          }
-        });
-        if (updateHistory) history.pushState(null, "", `#${id}`);
-        return true;
-      }
-
-      mainNav.addEventListener("click", (event) => {
-        if (!(event.target instanceof Element)) return;
-        const link = event.target.closest('a[href^="#"]');
-        if (!link || !mainNav.contains(link)) return;
-
-        if (showSection(link.hash.slice(1), true)) {
-          event.preventDefault();
-          mainContent.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-
-      window.addEventListener("popstate", () => {
-        showSection(location.hash.slice(1) || "home");
-      });
-      window.addEventListener("hashchange", () => {
-        showSection(location.hash.slice(1) || "home");
-      });
-      showSection(location.hash.slice(1) || "home");
-      })();
-    </script>
-    <script src="assets/js/site-config.js"></script>
+    <script src="site-config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="assets/js/note-content.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
